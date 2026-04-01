@@ -5,4 +5,19 @@
 
 ---@module 'lazy'
 ---@type LazySpec
-return {}
+
+return { -- 1. The Hex/RGB Colorizer
+  {
+    'NvChad/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup {
+        user_default_options = {
+          RGB = true,
+          RRGGBB = true,
+          names = true,
+          mode = 'background',
+        },
+      }
+    end,
+  },
+}

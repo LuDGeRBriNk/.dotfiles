@@ -2,18 +2,23 @@
 lastLoadedOutputPreset=Bass Enhancing + Perfect EQ - Low Latency
 
 [StreamInputs]
+blocklist=capture.rnnoise_source
 inputDevice=alsa_input.pci-0000_00_1f.3.analog-stereo
 
 [StreamOutputs]
-mostUsedPresets=Bass Enhancing + Perfect EQ,Loudness+Autogain,Advanced Auto Gain,Bass Boosted,Perfect EQ
+mostUsedPresets=Bass Enhancing + Perfect EQ,Bass Enhancing + Perfect EQ - Low Latency,Loudness+Autogain,Advanced Auto Gain,Bass Boosted
 outputDevice=alsa_output.pci-0000_00_1f.3.analog-stereo
 plugins=equalizer#0,convolver#0,limiter#0
-usedPresets=Bass Enhancing + Perfect EQ:26,Bass Boosted:6,Advanced Auto Gain:6,Perfect EQ:4,Loudness+Autogain:6,Bass Enhancing + Perfect EQ - Low Latency:2
-visiblePage=pluginsPage
+usedPresets=Bass Enhancing + Perfect EQ:26,Bass Boosted:6,Advanced Auto Gain:6,Perfect EQ:4,Loudness+Autogain:6,Bass Enhancing + Perfect EQ - Low Latency:6
 visiblePlugin=equalizer#0
 
+[TestSignals]
+frequency=440
+
 [Window]
+autostartOnLogin=true
 height=1360
 noWindowAfterStarting=true
 showTrayIcon=false
-width=2522
+visiblePipeWirePage=testSignalsPage
+width=1124

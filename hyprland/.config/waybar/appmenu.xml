@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+    <child>
+      <object class="GtkMenuItem" id="template1">
+        <property name="visible">True</property>
+        <property name="label">1) Blank template</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="template2">
+        <property name="visible">True</property>
+        <property name="label">2) Blank template</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="rec_full">
+        <property name="visible">True</property>
+        <property name="label">3-1) Screen record (Full)</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="rec_region">
+        <property name="visible">True</property>
+        <property name="label">3-2) Screen record (Region)</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="template3">
+        <property name="visible">True</property>
+        <property name="label">4) Blank template</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="dashboard">
+        <property name="visible">True</property>
+        <property name="label">5) System Dashboard</property>
+      </object>
+    </child>
+  </object>
+</interface>

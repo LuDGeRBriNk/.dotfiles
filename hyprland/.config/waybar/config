@@ -19,6 +19,7 @@
     // ==========================================================
     "modules-left": [
         "custom/appmenu",       // Arch Linux Icon
+        "custom/record_indicator", // Friendly stop button
         "hyprland/workspaces",  // Workspace indicators
         "hyprland/window"       // Current Window Title
     ],
@@ -50,8 +51,26 @@
     
     "custom/appmenu": {
         "format": "",
-        "on-click": "python ~/scripts/dashboard.py",
-        "tooltip": false
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "/home/ludger/.config/waybar/appmenu.xml",
+        "menu-actions": {
+            "template1": "true",
+            "template2": "true",
+            "rec_full": "bash ~/.config/waybar/scripts/record_screen.sh full",
+            "rec_region": "bash ~/.config/waybar/scripts/record_screen.sh region",
+            "template3": "true",
+            "dashboard": "python ~/scripts/dashboard.py"
+        }
+    },
+
+    "custom/record_indicator": {
+        "exec": "pidof gpu-screen-recorder > /dev/null && echo '🔴' || echo ''",
+        "interval": 2,
+        "format": "{}",
+        "on-click": "pkill -SIGINT -f gpu-screen-recorder",
+        "tooltip": true,
+        "tooltip-format": "Click to cleanly stop the active screen recording"
     },
 
     "hyprland/workspaces": {

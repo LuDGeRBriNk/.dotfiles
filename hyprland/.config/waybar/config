@@ -19,7 +19,7 @@
     // ==========================================================
     "modules-left": [
         "custom/appmenu",       // Arch Linux Icon
-        "custom/record_indicator", // Friendly stop button
+        "custom/record_indicator", // Dynamic Recording Timer
         "hyprland/workspaces",  // Workspace indicators
         "hyprland/window"       // Current Window Title
     ],
@@ -58,19 +58,21 @@
             "template1": "true",
             "template2": "true",
             "rec_full": "bash ~/.config/waybar/scripts/record_screen.sh full",
+            "rec_select": "bash ~/.config/waybar/scripts/record_screen.sh select",
             "rec_region": "bash ~/.config/waybar/scripts/record_screen.sh region",
+            "rec_voice": "bash ~/.config/waybar/scripts/record_screen.sh voice",
             "template3": "true",
             "dashboard": "python ~/scripts/dashboard.py"
         }
     },
 
     "custom/record_indicator": {
-        "exec": "pidof gpu-screen-recorder > /dev/null && echo '🔴' || echo ''",
-        "interval": 2,
+        "exec": "bash ~/.config/waybar/scripts/record_screen_timer.sh",
+        "interval": 1,
         "format": "{}",
-        "on-click": "pkill -SIGINT -f gpu-screen-recorder",
+        "on-click": "bash ~/.config/waybar/scripts/record_screen.sh stop",
         "tooltip": true,
-        "tooltip-format": "Click to cleanly stop the active screen recording"
+        "tooltip-format": "Click to cleanly stop the active recording"
     },
 
     "hyprland/workspaces": {

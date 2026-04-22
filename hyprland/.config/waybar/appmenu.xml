@@ -13,18 +13,37 @@
         <property name="label">2) Blank template</property>
       </object>
     </child>
+    
     <child>
-      <object class="GtkMenuItem" id="rec_full">
+      <object class="GtkMenuItem" id="rec_parent">
         <property name="visible">True</property>
-        <property name="label">3-1) Screen record (Full)</property>
-      </object>
+        <property name="label">3) Screen record 🢒</property>
+        
+        <child type="submenu">
+          <object class="GtkMenu" id="rec_submenu">
+            <child>
+              <object class="GtkMenuItem" id="rec_full">
+                <property name="visible">True</property>
+                <property name="label">Full Screen</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="rec_select">
+                <property name="visible">True</property>
+                <property name="label">Select Monitor...</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="rec_region">
+                <property name="visible">True</property>
+                <property name="label">Region</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        </object>
     </child>
-    <child>
-      <object class="GtkMenuItem" id="rec_region">
-        <property name="visible">True</property>
-        <property name="label">3-2) Screen record (Region)</property>
-      </object>
-    </child>
+    
     <child>
       <object class="GtkMenuItem" id="template3">
         <property name="visible">True</property>

@@ -20,6 +20,7 @@
     "modules-left": [
         "custom/appmenu",       // Arch Linux Icon
         "custom/record_indicator", // Dynamic Recording Timer
+        "custom/record_sound_indicator", // Dynamic Sound Recording Timer
         "hyprland/workspaces",  // Workspace indicators
         "hyprland/window"       // Current Window Title
     ],
@@ -55,7 +56,9 @@
         "menu": "on-click",
         "menu-file": "~/.config/waybar/appmenu.xml",
         "menu-actions": {
-            "template1": "true",
+            "rec_audio_mic": "bash ~/.config/waybar/scripts/record_sound.sh mic",
+            "rec_audio_sys": "bash ~/.config/waybar/scripts/record_sound.sh sys",
+            "rec_audio_both": "bash ~/.config/waybar/scripts/record_sound.sh both",
             "template2": "true",
             "rec_full": "bash ~/.config/waybar/scripts/record_screen.sh full",
             "rec_select": "bash ~/.config/waybar/scripts/record_screen.sh select",
@@ -73,6 +76,15 @@
         "on-click": "bash ~/.config/waybar/scripts/record_screen.sh stop",
         "tooltip": true,
         "tooltip-format": "Click to cleanly stop the active recording"
+    },
+
+    "custom/record_sound_indicator": {
+        "exec": "bash ~/.config/waybar/scripts/record_sound_timer.sh",
+        "interval": 1,
+        "format": "{}",
+        "on-click": "bash ~/.config/waybar/scripts/record_sound.sh stop",
+        "tooltip": true,
+        "tooltip-format": "Click to cleanly stop the active audio recording"
     },
 
     "hyprland/workspaces": {

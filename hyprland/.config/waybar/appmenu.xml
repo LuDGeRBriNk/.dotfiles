@@ -2,9 +2,32 @@
 <interface>
   <object class="GtkMenu" id="menu">
     <child>
-      <object class="GtkMenuItem" id="template1">
+      <object class="GtkMenuItem" id="rec_audio_parent">
         <property name="visible">True</property>
-        <property name="label">1) Blank template</property>
+        <property name="label">1) Audio record 🢒</property>
+        
+        <child type="submenu">
+          <object class="GtkMenu" id="rec_audio_submenu">
+            <child>
+              <object class="GtkMenuItem" id="rec_audio_mic">
+                <property name="visible">True</property>
+                <property name="label">Microphone Only</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="rec_audio_sys">
+                <property name="visible">True</property>
+                <property name="label">System Audio Only</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="rec_audio_both">
+                <property name="visible">True</property>
+                <property name="label">Microphone + System</property>
+              </object>
+            </child>
+          </object>
+        </child>
       </object>
     </child>
     <child>

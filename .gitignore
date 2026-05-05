@@ -19,6 +19,7 @@
 **/.zcompdump*
 **/.lesshst
 **/.log
+**/.rmlock
 
 # Specific ignores:
 base/.vim/plugged/

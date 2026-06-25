@@ -78,8 +78,8 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 autoload -Uz insert-unicode-char
 zle -N insert-unicode-char
 
-# Bind it to Alt+U (represented as ^[u)
-bindkey '^[u' insert-unicode-char
+# Bind it to Alt+I (represented as ^[u)
+bindkey '^[i' insert-unicode-char
 
 
 # History search settings

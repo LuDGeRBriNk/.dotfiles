@@ -74,6 +74,14 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 
+# Load the unicode insertion widget
+autoload -Uz insert-unicode-char
+zle -N insert-unicode-char
+
+# Bind it to Alt+U (represented as ^[u)
+bindkey '^[u' insert-unicode-char
+
+
 # History search settings
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search

@@ -78,8 +78,8 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 autoload -Uz insert-unicode-char
 zle -N insert-unicode-char
 
-# Bind it to Alt+I (represented as ^[u)
-bindkey '^[i' insert-unicode-char
+# Bind it to Alt+U (represented as ^[u)
+bindkey '^[u' insert-unicode-char
 
 
 # History search settings
@@ -163,3 +163,8 @@ bindkey -M vicmd 'j' history-substring-search-down
 [ -f "$HOME/.config/shell.shortcuts" ] && source "$HOME/.config/shell.shortcuts"
 [ -f "$HOME/.config/shell.aliases" ] && source "$HOME/.config/shell.aliases"
 [ -f "$HOME/.config/shell.autostart" ] && source "$HOME/.config/shell.autostart"
+
+# Auto load hyprland if tty is tty1
+if [[ "$(tty)" == '/dev/tty1' ]] && [[ -z "$WAYLAND_DISPLAY" ]] && [[ -z "$DISPLAY" ]]; then
+    exec start-hyprland
+fi

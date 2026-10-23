@@ -4,6 +4,7 @@
 # Allow specific modules
 !/base/
 !/hyprland/
+!/audio/
 !/.gitignore
 !/README.md
 

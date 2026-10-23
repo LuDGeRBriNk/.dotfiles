@@ -1,0 +1,155 @@
+/* --------------------------------------------------
+ * 0. COLOR PALETTE
+ * -------------------------------------------------- */
+@define-color base         #1e1e2e; /* Mocha Base */
+@define-color base-hover   #313244; /* Surface 0 */
+@define-color shadow       rgba(17, 17, 27, 0.8);
+
+@define-color mauve        #cba6f7;
+@define-color red          #f38ba8;
+@define-color text         #cdd6f4;
+@define-color subtext      #a6adc8;
+
+/* --------------------------------------------------
+ * 1. GLOBAL TYPOGRAPHY
+ * -------------------------------------------------- */
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px; 
+    font-weight: 800;
+}
+
+/* --------------------------------------------------
+ * 2. MAIN WINDOW & PANEL
+ * -------------------------------------------------- */
+
+/* The invisible wrapper that covers the screen */
+.control-center {
+    background: transparent;
+}
+
+/* The actual visible panel on the right side */
+.control-center-list {
+    /* Dimensions */
+    min-width: 350px !important; /* Forces it to be wide */
+    min-height: 500px;
+    margin: 10px;
+    padding: 10px; /* Increased padding */
+
+    /* VISIBILITY FIX: Hardcoded solid color to ensure opacity */
+    background-color: #1e1e2e;
+    opacity: 1.0; 
+    
+    /* Styling */
+    border-radius: 8px;
+    border-left: 2px solid @mauve; /* Thicker border */
+    border-right: 2px solid @mauve;
+    
+    /* Deep Shadow */
+    box-shadow: 0px 0px 20px @shadow;
+
+    /* Slide Animation */
+    transition: all 0.2s ease-in-out;
+}
+
+.control-center-list-placeholder {
+    opacity: 0;
+}
+
+/* --------------------------------------------------
+ * 3. WIDGETS (Header & DND)
+ * -------------------------------------------------- */
+
+/* The "Notifications" Header Text */
+.widget-title > label {
+    color: @mauve;
+    font-size: 16px; /* Even larger for the header */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* The "Clear All" Button */
+.widget-title > button {
+    background: @base;
+    color: @red;
+    border: 2px solid @red;
+    border-radius: 6px;
+    padding: 4px 12px; /* Bigger button */
+    font-size: 12px;
+    margin: 6px 0;
+}
+
+.widget-title > button:hover {
+    background: @red;
+    color: @base;
+}
+
+/* The "Do Not Disturb" Toggle */
+.widget-dnd {
+    background: @base-hover;
+    color: @text;
+    margin: 10px 0px;
+    padding: 8px; /* Larger click area */
+    border-radius: 6px;
+    border: 2px solid @subtext;
+    font-size: 14px;
+}
+
+.widget-dnd > switch:checked {
+    background: @mauve;
+    border-color: @mauve;
+}
+
+/* --------------------------------------------------
+ * 4. NOTIFICATION ITEMS
+ * -------------------------------------------------- */
+
+/* The individual notification box */
+.notification {
+    background-color: @base-hover;
+    border-radius: 6px;
+    margin: 6px 0px;
+    padding: 10px; /* Increased internal padding */
+    box-shadow: 4px 4px 0px @shadow; 
+}
+
+.notification:hover {
+    box-shadow: 2px 2px 0px @shadow;
+    background-color: #45475a; 
+}
+
+/* Notification Header (App Name) */
+.summary {
+    color: @mauve;
+    font-size: 15px; /* Large title */
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+/* Notification Body Text */
+.body {
+    color: @text;
+    font-size: 13px; /* Large body text */
+}
+
+/* Time Stamp */
+.time {
+    color: @subtext;
+    font-size: 11px;
+    margin-right: 10px;
+}
+
+/* Action Buttons */
+.notification-action {
+    background: transparent;
+    border: 2px solid @text;
+    color: @text;
+    border-radius: 6px;
+    padding: 4px 10px;
+    margin-top: 6px;
+}
+
+.notification-action:hover {
+    background: @text;
+    color: @base;
+}

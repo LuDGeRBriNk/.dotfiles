@@ -1,0 +1,73 @@
+/* Catppuccin Latte - Wofi */
+* {
+  font-size: 18px;
+}
+#scroll {
+  background-color: #eff1f5;
+}
+#outer-box {
+  background-color: #eff1f5;
+  padding: 10px;
+  border: 2px solid #7287fd;
+}
+#main {
+  background-color: #eff1f5;
+}
+scrollbar,
+scrollbar trough,
+undershoot.top,
+undershoot.bottom {
+  min-width: 5px;
+  min-height: 5px;
+  background: none;
+}
+scrollbar slider{
+  background-color: #7287fd;
+}
+#outer-box {
+  padding: 10px;
+}
+
+#input image {
+  color: #7287fd; /* Accent */
+  -gtk-icon-effect: none;
+}
+#input {
+  background-color: #ccd0da; /* Surface0 */
+  color: #4c4f69;        /* typed text */
+  caret-color: #7287fd;
+  border: 1px solid #bcc0cc; /* Surface1 */
+  padding: 8px 12px;
+  margin: 10px;
+  border-radius: 35px;
+  outline: 1px solid #acb0be;
+}
+#input:focus {
+  border-color: #7287fd; /* Accent */
+}
+#input placeholder {
+  color: #eff1f5; /* Overlay0 */
+}
+#entry {
+  background-color: #eff1f5;
+  color: #4c4f69;
+}
+#entry #entry:selected {
+  background-color: #ccd0da;
+  color: #7287fd;
+}
+#entry:selected {
+  background-color: #ccd0da;
+  color: #7287fd;
+}
+#entry:hover {
+  background-color: #bcc0cc; /* Surface1 */
+}
+#text {
+  color: #4c4f69 ; /* Text */
+}
+#text:selected {
+  color: #7287fd; /* Accent */
+}
+
+

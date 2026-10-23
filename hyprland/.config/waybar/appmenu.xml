@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+    <child>
+      <object class="GtkMenuItem" id="rec_audio_parent">
+        <property name="visible">True</property>
+        <property name="label">1) Audio record 🢒</property>
+        
+        <child type="submenu">
+          <object class="GtkMenu" id="rec_audio_submenu">
+            <child>
+              <object class="GtkMenuItem" id="rec_audio_mic">
+                <property name="visible">True</property>
+                <property name="label">Microphone Only</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="rec_audio_sys">
+                <property name="visible">True</property>
+                <property name="label">System Audio Only</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="rec_audio_both">
+                <property name="visible">True</property>
+                <property name="label">Microphone + System</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="template2">
+        <property name="visible">True</property>
+        <property name="label">2) Blank template</property>
+      </object>
+    </child>
+    
+    <child>
+      <object class="GtkMenuItem" id="rec_parent">
+        <property name="visible">True</property>
+        <property name="label">3) Screen record 🢒</property>
+        
+        <child type="submenu">
+          <object class="GtkMenu" id="rec_submenu">
+            <child>
+              <object class="GtkMenuItem" id="rec_full">
+                <property name="visible">True</property>
+                <property name="label">Full Screen</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="rec_select">
+                <property name="visible">True</property>
+                <property name="label">Select Monitor...</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="rec_region">
+                <property name="visible">True</property>
+                <property name="label">Region</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        </object>
+    </child>
+    
+    <child>
+      <object class="GtkMenuItem" id="template3">
+        <property name="visible">True</property>
+        <property name="label">4) Blank template</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="dashboard">
+        <property name="visible">True</property>
+        <property name="label">5) System Dashboard</property>
+      </object>
+    </child>
+  </object>
+</interface>

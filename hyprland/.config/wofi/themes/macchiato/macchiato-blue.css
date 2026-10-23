@@ -1,0 +1,73 @@
+/* Catppuccin Macchiato - Wofi */
+* {
+  font-size: 18px;
+}
+#scroll {
+  background-color: #24273a;
+}
+#outer-box {
+  background-color: #24273a;
+  padding: 10px;
+  border: 2px solid #8aadf4;
+}
+#main {
+  background-color: #24273a;
+}
+scrollbar,
+scrollbar trough,
+undershoot.top,
+undershoot.bottom {
+  min-width: 5px;
+  min-height: 5px;
+  background: none;
+}
+scrollbar slider{
+  background-color: #8aadf4;
+}
+#outer-box {
+  padding: 10px;
+}
+
+#input image {
+  color: #8aadf4; /* Accent */
+  -gtk-icon-effect: none;
+}
+#input {
+  background-color: #363a4f; /* Surface0 */
+  color: #cad3f5;        /* typed text */
+  caret-color: #8aadf4;
+  border: 1px solid #494d64; /* Surface1 */
+  padding: 8px 12px;
+  margin: 10px;
+  border-radius: 35px;
+  outline: 1px solid #5b6078;
+}
+#input:focus {
+  border-color: #8aadf4; /* Accent */
+}
+#input placeholder {
+  color: #24273a; /* Overlay0 */
+}
+#entry {
+  background-color: #24273a;
+  color: #cad3f5;
+}
+#entry #entry:selected {
+  background-color: #363a4f;
+  color: #8aadf4;
+}
+#entry:selected {
+  background-color: #363a4f;
+  color: #8aadf4;
+}
+#entry:hover {
+  background-color: #494d64; /* Surface1 */
+}
+#text {
+  color: #cad3f5 ; /* Text */
+}
+#text:selected {
+  color: #8aadf4; /* Accent */
+}
+
+

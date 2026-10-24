@@ -2,25 +2,28 @@ local programs = require("hypr_programs")
 
 hl.on("hyprland.start", function()
 	-- Top Bar
-	hl.exec_cmd("bash -c killall waybar; waybar")
+	hl.exec_cmd("bash -c 'killall -w -q waybar || true; waybar'")
 
 	-- Wallpaper
-	hl.exec_cmd("bash -c killall hyprpaper; hyprpaper & sleep 0.5; ~/.config/hypr/scripts/set-wallpaper.sh random")
+	-- Replaced sleep with a polling loop that actively waits for the IPC socket to be ready
+	hl.exec_cmd(
+		"bash -c 'killall -w -q hyprpaper || true; hyprpaper & while ! hyprctl hyprpaper info >/dev/null 2>&1; do continue; done; ~/.config/hypr/scripts/set-wallpaper.sh random'"
+	)
 
 	-- Hypridle
-	hl.exec_cmd("bash -c killall hypridle; hypridle")
+	hl.exec_cmd("bash -c 'killall -w -q hypridle || true; hypridle'")
 
 	-- Notifications
-	hl.exec_cmd("bash -c killall swaync; swaync")
+	hl.exec_cmd("bash -c 'killall -w -q swaync || true; swaync'")
 
 	-- polkitagent
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 
 	-- Sound effects
-	hl.exec_cmd("bash -c killall easyeffects; easyeffects")
+	hl.exec_cmd("bash -c 'killall -w -q easyeffects || true; easyeffects'")
 
 	-- Wayscriber to draw on screen
-	hl.exec_cmd("bash -c killall wayscriber; wayscriber --daemon --no-tray")
+	hl.exec_cmd("bash -c 'killall -w -q wayscriber || true; wayscriber --daemon --no-tray'")
 
 	-- Start cliphist to watch for text and image copies
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")

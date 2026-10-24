@@ -25,8 +25,11 @@ require("hypr_permissions")
 require("hypr_looks")
 require("hypr_layouts")
 
----- Rules & Actions ----
+---- Workspaces and Windows Rules ----
+require("hypr_workspacerules")
 require("hypr_windowrules")
+
+---- Keybinds ----
 
 require("hypr_keybinds_multimediakeys")
 require("hypr_keybinds_system")

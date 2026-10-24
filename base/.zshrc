@@ -158,6 +158,8 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+# Adds ~/scripts/ to PATH
+export PATH="$HOME/scripts:$PATH"
 
 # Load aliases, shortcuts and autostarters if existent.
 [ -f "$HOME/.config/shell.shortcuts" ] && source "$HOME/.config/shell.shortcuts"

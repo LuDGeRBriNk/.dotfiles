@@ -6,10 +6,8 @@ hl.on("hyprland.start", function()
 
 	-- Wallpaper
 	-- Replaced sleep with a polling loop that actively waits for the IPC socket to be ready
-	hl.exec_cmd(
-		"bash -c 'killall -w -q hyprpaper || true; hyprpaper & while ! hyprctl hyprpaper info >/dev/null 2>&1; do continue; done; ~/.config/hypr/scripts/set-wallpaper.sh random'"
-	)
 
+	hl.exec_cmd("bash -c killall hyprpaper; hyprpaper & sleep 0.5; ~/.config/hypr/scripts/set-wallpaper.sh random")
 	-- Hypridle
 	hl.exec_cmd("bash -c 'killall -w -q hypridle || true; hypridle'")
 

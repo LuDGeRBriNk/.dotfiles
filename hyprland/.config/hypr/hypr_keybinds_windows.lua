@@ -47,12 +47,12 @@ hl.bind(
 	{ repeating = true }
 )
 hl.bind(
-	keys.mainMod .. "+" .. keys.lightKey .. "+ K",
+	keys.mainMod .. "+" .. keys.lightKey .. "+ J",
 	hl.dsp.window.resize({ x = 0, y = 10, relative = true }),
 	{ repeating = true }
 )
 hl.bind(
-	keys.mainMod .. "+" .. keys.lightKey .. "+ J",
+	keys.mainMod .. "+" .. keys.lightKey .. "+ K",
 	hl.dsp.window.resize({ x = 0, y = -10, relative = true }),
 	{ repeating = true }
 )

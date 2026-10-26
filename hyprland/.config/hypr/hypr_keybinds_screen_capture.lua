@@ -17,4 +17,5 @@ hl.bind(
 -- Recordings
 
 -- Drawing on Screen (wayscribe)
-hl.bind(keys.mainMod .. " + D", hl.dsp.exec_cmd("wayscriber --daemon-toggle"))
+hl.bind(keys.mainMod .. " + D", hl.dsp.exec_cmd("wayscriber --daemon-toggle --freeze"))
+hl.bind(keys.mainMod .. "+" .. keys.lightKey .. " + D", hl.dsp.exec_cmd("wayscriber --daemon-toggle"))

@@ -1,5 +1,5 @@
 show=drun
-width=800
+width=1200
 height=600
 always_parse_args=true
 show_all=false
@@ -12,7 +12,7 @@ prompt=
 columns=3
 
 allow_images=true
-image_size=24
+image_size=20
 matching=fuzzy
 
 key_down=Ctrl-j

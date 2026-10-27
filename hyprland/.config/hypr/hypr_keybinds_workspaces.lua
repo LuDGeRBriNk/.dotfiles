@@ -15,6 +15,8 @@ hl.bind(keys.mainMod .. "+" .. keys.lightKey .. "+ code:49", hl.dsp.window.move(
 -- Scroll through existing workspaces with keys.mainMod + scroll
 hl.bind(keys.mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(keys.mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(keys.mainMod .. " + mouse_left", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(keys.mainMod .. " + mouse_right", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Scroll through workspaces with keys.mainMod + keys.strongKey + arrow keys and HJKL keys
 hl.bind(keys.mainMod .. "+" .. keys.strongKey .. " + left", hl.dsp.focus({ workspace = "e-1" }))

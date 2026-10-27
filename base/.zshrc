@@ -159,7 +159,7 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # Load fzf key-bindings
-[-f "/usr/share/fzf/key-bindings.zsh"] && source /usr/share/fzf/key-bindings.zsh
+[ -f "/usr/share/fzf/key-bindings.zsh" ] && source /usr/share/fzf/key-bindings.zsh
 
 # Load aliases, shortcuts and autostarters if existent.
 [ -f "$HOME/.config/shell.shortcuts" ] && source "$HOME/.config/shell.shortcuts"

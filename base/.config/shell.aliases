@@ -2,8 +2,8 @@
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias ..... ='cd ../../../..'
-alias ...... ='cd ../../../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 
 
 # Life needs color - Some colorful aliases:

@@ -37,5 +37,6 @@ require("hypr_keybinds_programs")
 require("hypr_keybinds_workspaces")
 require("hypr_keybinds_windows")
 require("hypr_keybinds_screen_capture")
+require("hypr_keybinds_wallpaper")
 
 require("hypr_autostart")

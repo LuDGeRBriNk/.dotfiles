@@ -1,31 +1,5 @@
 local keys = require("hypr_keybindsvariables")
 
--- Set Backgrounds
-hl.bind(
-	keys.mainMod .. "+" .. keys.strongKey .. " + left",
-	hl.dsp.exec_cmd("~/.config/hypr/scripts/set-wallpaper.sh prev")
-)
-hl.bind(
-	keys.mainMod .. "+" .. keys.strongKey .. " + H",
-	hl.dsp.exec_cmd("~/.config/hypr/scripts/set-wallpaper.sh prev")
-)
-hl.bind(
-	keys.mainMod .. "+" .. keys.strongKey .. " + right",
-	hl.dsp.exec_cmd("~/.config/hypr/scripts/set-wallpaper.sh next")
-)
-hl.bind(
-	keys.mainMod .. "+" .. keys.strongKey .. " + L",
-	hl.dsp.exec_cmd("~/.config/hypr/scripts/set-wallpaper.sh next")
-)
-hl.bind(
-	keys.mainMod .. "+" .. keys.strongKey .. " + up",
-	hl.dsp.exec_cmd("~/.config/hypr/scripts/set-wallpaper.sh random")
-)
-hl.bind(
-	keys.mainMod .. "+" .. keys.strongKey .. " + K",
-	hl.dsp.exec_cmd("~/.config/hypr/scripts/set-wallpaper.sh random")
-)
-
 -- Switch workspaces with keys.mainMod + [0 - 9]
 -- Move active window to a workspace with keys.mainMod + keys.lightKey + [0 - 9]
 for i = 1, 10 do
@@ -41,3 +15,27 @@ hl.bind(keys.mainMod .. "+" .. keys.lightKey .. " + Q", hl.dsp.window.move({ wor
 -- Scroll through existing workspaces with keys.mainMod + scroll
 hl.bind(keys.mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(keys.mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+
+-- Scroll through workspaces with keys.mainMod + keys.strongKey + arrow keys and HJKL keys
+hl.bind(keys.mainMod .. "+" .. keys.strongKey .. " + left", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(keys.mainMod .. "+" .. keys.strongKey .. " + H", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(keys.mainMod .. "+" .. keys.strongKey .. " + right", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(keys.mainMod .. "+" .. keys.strongKey .. " + L", hl.dsp.focus({ workspace = "e+1" }))
+
+-- Move windows through workspaces with keys.mainMod + keys.strongKey + heys.lightKey + arrow keys and HJKL keys
+hl.bind(
+	keys.mainMod .. "+" .. keys.strongKey .. "+" .. keys.lightKey .. " + left",
+	hl.dsp.window.move({ workspace = "e-1" })
+)
+hl.bind(
+	keys.mainMod .. "+" .. keys.strongKey .. "+" .. keys.lightKey .. " + H",
+	hl.dsp.window.move({ workspace = "e-1" })
+)
+hl.bind(
+	keys.mainMod .. "+" .. keys.strongKey .. "+" .. keys.lightKey .. " + right",
+	hl.dsp.window.move({ workspace = "e+1" })
+)
+hl.bind(
+	keys.mainMod .. "+" .. keys.strongKey .. "+" .. keys.lightKey .. " + L",
+	hl.dsp.window.move({ workspace = "e+1" })
+)

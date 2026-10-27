@@ -8,9 +8,9 @@ for i = 1, 10 do
 	hl.bind(keys.mainMod .. "+" .. keys.lightKey .. "+" .. key, hl.dsp.window.move({ workspace = key + 1 })) -- +1 is computed, because -1 is present at waybar
 end
 
--- Example special workspace (scratchpad)
-hl.bind(keys.mainMod .. "+ Q", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(keys.mainMod .. "+" .. keys.lightKey .. " + Q", hl.dsp.window.move({ workspace = "special:magic" }))
+-- Alternate with last workspace with mainMod + "`" (backtick)
+hl.bind(keys.mainMod .. "+ code:49", hl.dsp.focus({ workspace = "previous" })) -- code:49 = "`". obtained with wev package
+hl.bind(keys.mainMod .. "+" .. keys.lightKey .. "+ code:49", hl.dsp.window.move({ workspace = "previous" }))
 
 -- Scroll through existing workspaces with keys.mainMod + scroll
 hl.bind(keys.mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -39,3 +39,7 @@ hl.bind(
 	keys.mainMod .. "+" .. keys.strongKey .. "+" .. keys.lightKey .. " + L",
 	hl.dsp.window.move({ workspace = "e+1" })
 )
+
+-- Example special workspace (scratchpad)
+hl.bind(keys.mainMod .. "+ Q", hl.dsp.workspace.toggle_special("magic"))
+hl.bind(keys.mainMod .. "+" .. keys.lightKey .. " + Q", hl.dsp.window.move({ workspace = "special:magic" }))

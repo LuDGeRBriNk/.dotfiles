@@ -8,8 +8,8 @@
 !/.gitignore
 !/README.md
 
-!aurlist.txt
-!pkglist.txt
+!pacman-Q.txt
+!pacman-Qe.txt
 
 # STRICTLY IGNORE within the allowed modules (Safety Net)
 **/.ssh/*

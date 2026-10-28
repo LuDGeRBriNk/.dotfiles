@@ -98,3 +98,10 @@ hl.window_rule({
 	float = true,
 	size = { "monitor_w * 0.7", "monitor_h * 0.7" },
 })
+
+-- KeepassXC starts floating
+hl.window_rule({
+	match = { class = "keepassxc" },
+	float = true,
+	size = { 800, 600 },
+})

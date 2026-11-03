@@ -1,7 +1,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
--- Example window rules that are useful
+local programs = require("hypr_programs")
 
 local suppressMaximizeRule = hl.window_rule({
 	-- Ignore maximize requests from all apps. You'll probably like this.
@@ -86,22 +86,17 @@ hl.on("window.open", function(w)
 	end)
 end)
 
--- MPV and IMV starts floating
-hl.window_rule({
-	match = { class = "mpv" },
-	float = true,
-	size = { "monitor_w * 0.7", "monitor_h * 0.7" },
-})
+-- Start these programs in floating windows
+local floating_windows = {
+	{ class = "mpv", size = { "monitor_w * 0.7", "monitor_h * 0.7" } },
+	{ class = "imv", size = { "monitor_w * 0.7", "monitor_h * 0.7" } },
+	{ class = "org.keepassxc.KeePassXC", size = { 800, 600 } },
+}
 
-hl.window_rule({
-	match = { class = "imv" },
-	float = true,
-	size = { "monitor_w * 0.7", "monitor_h * 0.7" },
-})
-
--- KeepassXC starts floating
-hl.window_rule({
-	match = { class = "keepassxc" },
-	float = true,
-	size = { 800, 600 },
-})
+for _, window in ipairs(floating_windows) do
+	hl.window_rule({
+		match = { class = window.class },
+		float = true,
+		size = window.size,
+	})
+end

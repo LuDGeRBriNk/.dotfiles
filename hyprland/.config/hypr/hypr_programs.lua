@@ -20,7 +20,10 @@ M.CodeEditorCli = M.Terminal .. " -e nvim"
 M.TextEditor = M.Terminal .. " -e nvim"
 
 M.Calculator = "qalculate-qt"
+
 M.PasswordManager = "keepassxc"
-M.SshClient = "termius"
+M.PasswordManagerWindowClass = "org.keepassxc.KeePassXC"
+
+M.SshClient = "terminus"
 
 return M
